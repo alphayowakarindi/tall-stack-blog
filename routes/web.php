@@ -1,9 +1,15 @@
 <?php
 
-use App\Livewire\Counter;
+use App\Livewire\About;
+use App\Livewire\Home;
+use App\Livewire\Posts\ShowPosts;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Counter::class);
+Route::get('/', Home::class)->name('home');
+
+Route::get('/posts', ShowPosts::class)->name('posts.index');
+
+Route::get('/about', About::class)->name('about');
 
 Route::middleware([
     'auth:sanctum',
